@@ -1,28 +1,32 @@
-# robosys2022
-ロボットシステム学の練習リポジトリ
- ：このリポジトリにはaveコマンドが含まれている
-# aveコマンド
+# mypkg
+ROS2の練習リポジトリ
+ ：このリポジトリにはtalker.pyとlistener.pyコマンドが含まれている
+# talker.pyコマンド
 ![test](https://github.com/Rion731/mypkg/actions/workflows/test.yml/badge.svg)
-* ave:標準入力から受け取った値の平均を返すプログラム
-* 使用方法：aveのプログラムをコピーして使用する
-* 平均を求めたいときに使用するプログラム
-* 標準入力に値を代入するとその値を足し足した回数で割り平均を出力するプログラムである
-## ファイルのダウンロード方法
-* git cloneでのダウンロード
-   * git clone (https://github.com/Rion731/robosys2022.git)
-* ZIPファイルでのダウンロード
-   * Codeタブをクリックし、左下のDownload ZIPをクリック
+* talker.py: 数字をカウントアップしてトピック/countupを通じてlistener.pyにデータを送信するノードである
+* メッセージの型は16ビット符号付き整数である
+
+# listener.pyコマンド
+* listener.py: /countupからメッセージを受け取り表示するサブスクライバをもつノードである
+
 ## 使用例
-* seq 10 | ./ave
+* 端末1
 
-  5.5
+  ros2 run mypkg talker
 
-* seq 5 | ./ave
+* 端末2
 
-  3.0
+ ros2 run mypkg listener
+
+ [INFO] [1672323191.834832600] [listener]: Listen: 37
+
+ [INFO] [1672323192.327138300] [listener]: Listen: 38
+
+ [INFO] [1672323192.826892300] [listener]: Listen: 39
+
 ## 必要なソフトウェア
 * Python
-  *テスト済み: 3.7～3.10
+* ROS2
 ## テスト環境
 * Ubuntu
 ## ライセンス
