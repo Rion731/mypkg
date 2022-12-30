@@ -1,13 +1,13 @@
 # mypkg
 ROS2の練習リポジトリ
- ：このリポジトリにはtalker.pyとlistener.pyコマンドが含まれている
-# talker.pyコマンド
+ ：このリポジトリにはtalker.pyとlistener.pyというノードが含まれている
+# talker.py
 ![test](https://github.com/Rion731/mypkg/actions/workflows/test.yml/badge.svg)
-* talker.py: 数字をカウントアップしてトピック/countupを通じてlistener.pyにデータを送信するノードである
+* talker.py: 数字をカウントアップしてトピック/countupを通じてlistener.pyにデータを送信するパブリッシャをもつノードである
 * メッセージの型は16ビット符号付き整数である
 
-# listener.pyコマンド
-* listener.py: /countupからメッセージを受け取り表示するサブスクライバをもつノードである
+# listener.py
+* listener.py: トピック/countupからメッセージを受け取り表示するサブスクライバをもつノードである
 
 ## 使用例
 * 端末1
